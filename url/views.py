@@ -5,6 +5,8 @@ from .models import URL
 from rest_framework.decorators import api_view
 from django.http import JsonResponse
 import hashlib
+from .serializers import URLSerializer
+from rest_framework.response import Response
 
 def redirect_original_url(request, hash):
     try:
