@@ -29,6 +29,12 @@ Follow the steps below to deploy and run the Django REST URL Shortener on your K
 
 You need a Koyeb account to successfully deploy and run this application. If you don't already have an account, you can sign up for free [here](https://app.koyeb.com/auth/signup).
 
+## Deploy using the Koyeb button
+
+The fastest way to deploy the Django REST URL Shortener is to click the "Deploy to Koyeb" button.
+
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?name=url-shortener&type=git&repository=koyeb/example-django-rest-framework-url-shortener&branch=main&run_command=gunicorn%20urlshortener.wsgi&env[DATABASE_URL]=REPLACE_ME&env[DISABLE_COLLECTSTATIC]=1&env[DJANGO_ALLOWED_HOSTS]=REPLACE_ME)
+
 ### Fork and deploy to Koyeb
 
 If you want to customize and enhance this application, you need to fork this repository.
