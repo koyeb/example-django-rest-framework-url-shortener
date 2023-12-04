@@ -23,9 +23,10 @@
             <!-- JINJA USED TO LOOP OVER URLS SENT TO TEMPLATE BY VIEW FUNCTION -->
             {% for url in urls %}
             <div class="url">
-                <a href="/url/{{url.hash}}">
-                    <div class="url-item">Hash: {{url.hash}}</div>
+                <a href="/url/{{url.hash}}"></a>
+                <div class="url-item">Hash: {{url.hash}}</div>
                 </a>
+                <div class="url-item">Short URL: /url/{{url.hash}}</div>
                 <div class="url-item">Points To: {{url.url}}</div>
                 <div class="url-item">Uses: {{url.visits}}</div>
             </div>
@@ -56,6 +57,7 @@
             })
                 // if all goes well
                 .then((response) => {
+                    console.log(response);
                     if (response.status >= 400) {
                         return response.text();
                     }
@@ -64,11 +66,15 @@
                 })
                 // if something goes wrong
                 .then((error) => {
-                    // put error text in error div
-                    const errorDiv = document.querySelector(".error")
-
-                    errorDiv.innerHTML = error
-
+                    // get error string from html error from django
+                    const regex = /<pre[^>]*>(.*?)<\/pre>/s;
+                    const match = regex.exec(error);
+                    if (match) {
+                        const innerText = match[1];
+                        alert(innerText)
+                    } else {
+                        alert("No Error Details");
+                    }
                 });
         });
     </script>
