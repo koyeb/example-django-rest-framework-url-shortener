@@ -39,14 +39,13 @@ The fastest way to deploy the Django REST URL Shortener is to click the "Deploy 
 
 If you want to customize and enhance this application, you need to fork this repository.
 
-On the [Koyeb Control Panel](//app.koyeb.com/apps), click the **Create App** button to go to the App creation page.
+On the [Koyeb Control Panel](//app.koyeb.com/apps), on the **Overview** tab, click the **Create Web Service** button to begin.
 
-1. Select `GitHub` as the deployment method to use
-2. In the repositories list, select the repository you just forked
-3. Specify the branch to deploy, in this case `main`
-4. Click **Build and deploy** settings to configure your **Run command** by selecting **Override** and adding the same command as when you ran the application locally, `gunicorn url_project.wsgi`
-5. Add environment variables `DATABASE_URL` with `?sslmode=require` added at the end, `DISABLE_COLLECTSTATIC` with the value `1`, and `DJANGO_ALLOWED_HOSTS` with the value `<YOUR_APP_NAME>-<YOUR_KOYEB_ORG>.koyeb.app`
-6. Then, give your App a name, i.e `url-shortener`, and click `Deploy`
+1. Select `GitHub` as the deployment method.
+2. In the repositories list, select the repository you just forked.
+3. Expand the **Builder** section. Click the **override** toggle associated with the **Run command** and enter `gunicorn url_project.wsgi` in the field.
+4. In the **Environment variables** section, click **Add variable** to add variables for `DATABASE_URL` with `?sslmode=require` added at the end, `DISABLE_COLLECTSTATIC` with the value `1`, and `DJANGO_ALLOWED_HOSTS` with the value `<YOUR_APP_NAME>-<YOUR_KOYEB_ORG>.koyeb.app`.
+5. Then, give your App a name, i.e `url-shortener`, and click `Deploy`.
 
 You land on the deployment page where you can follow the build of your application. Once the build is completed, your application is being deployed and you will be able to access it via `<YOUR_APP_NAME>-<YOUR_ORG_NAME>.koyeb.app`.
 
