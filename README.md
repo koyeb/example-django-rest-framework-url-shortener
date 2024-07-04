@@ -39,7 +39,7 @@ The fastest way to deploy the Django REST URL Shortener is to click the "Deploy 
 
 If you want to customize and enhance this application, you need to fork this repository.
 
-On the [Koyeb Control Panel](//app.koyeb.com/apps), on the **Overview** tab, click the **Create Web Service** button to begin.
+On the [Koyeb Control Panel](https://app.koyeb.com/), on the **Overview** tab, click the **Create Web Service** button to begin.
 
 1. Select `GitHub` as the deployment method.
 2. In the repositories list, select the repository you just forked.
